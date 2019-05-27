@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Baseado no código disponivel em https://groups.google.com/forum/?hl=en#!topic/kivy-users/N18DmblNWb0
+
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
