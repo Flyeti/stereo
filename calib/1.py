@@ -13,7 +13,7 @@ objp[:,:2] = np.mgrid[0:6,0:6].T.reshape(-1,2)
 objpoints = [] # 3d объекты из реального мира
 imgpoints = [] # 2d точки на плоскости изображения
 
-images = glob.glob('C:/Users/INIPSO/.spyder-py3/*.jpg')
+images = glob.glob('/*.jpg')
 
 for fname in images:
     img = cv2.imread(fname)
@@ -37,15 +37,4 @@ cv2.destroyAllWindows()
 
 # калибрируем и сохраняем результаты
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
-np.save('C:/Users/INIPSO/Desktop/calibrationPH', [mtx, dist, rvecs, tvecs])
-
-import kivy
-from kivy.app import App
-from kivy.uix.lable import Label
-
-class MyApp(App):
-    def build(self):
-        return Label(text = "Yay")
-
-if __name__ == "__main__":
-    MyApp().run()
+np.save('/calibration', [mtx, dist, rvecs, tvecs])
